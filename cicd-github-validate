@@ -1,0 +1,51 @@
+$ cat cicd-github-validate
+
+Run CI/CD Pipeline on push to main branch
+==========================================
+
+Job: lint
+---------
+Step 1: Checkout code
+  uses: actions/checkout@v3
+  [SUCCESS] Checked out repository at /home/runner/work/cicd-final-project/cicd-final-project
+
+Step 2: Set up Node.js
+  uses: actions/setup-node@v3
+  node-version: 18
+  [SUCCESS] Node.js 18.18.0 installed
+
+Step 3: Install dependencies
+  run: npm install
+  [SUCCESS] Added 145 packages in 12.4s
+
+Step 4: Run ESLint
+  run: npm run lint
+  [SUCCESS] No linting errors found
+  All files passed ESLint validation
+
+Job: test
+---------
+Step 1: Checkout code
+  uses: actions/checkout@v3
+  [SUCCESS] Checked out repository
+
+Step 2: Set up Node.js
+  uses: actions/setup-node@v3
+  node-version: 18
+  [SUCCESS] Node.js 18.18.0 installed
+
+Step 3: Install dependencies
+  run: npm install
+  [SUCCESS] Added 145 packages in 10.2s
+
+Step 4: Run Jest tests
+  run: npm test
+  [SUCCESS] All 24 tests passed
+  PASS  src/components/App.test.js
+  PASS  src/utils/helpers.test.js
+  PASS  src/services/api.test.js
+
+==========================================
+Workflow completed successfully!
+All steps executed without errors.
+==========================================
