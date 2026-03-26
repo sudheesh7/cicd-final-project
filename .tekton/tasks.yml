@@ -1,0 +1,44 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: cleanup
+spec:
+  steps:
+    - name: cleanup
+      image: ubuntu:latest
+      script: |
+        echo "Cleaning up temporary files..."
+        rm -rf /tmp/*
+        echo "Cleanup completed successfully"
+
+---
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: test
+spec:
+  steps:
+    - name: checkout
+      image: alpine/git:latest
+      script: |
+        echo "Checking out source code..."
+        git clone $(params.repo-url) /workspace/source
+
+    - name: setup-node
+      image: node:18
+      script: |
+        echo "Setting up Node.js environment..."
+        npm install
+
+    - name: run-jest-tests
+      image: node:18
+      script: |
+        echo "Running Jest unit tests..."
+        npm test
+
+    - name: cleanup-test
+      image: ubuntu:latest
+      script: |
+        echo "Cleaning up test artifacts..."
+        rm -rf /tmp/*
+        echo "Test cleanup completed"
