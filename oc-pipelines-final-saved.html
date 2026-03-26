@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>oc-pipelines-final | OpenShift Pipelines</title>
+<style>
+body { font-family: Arial, sans-serif; background: #0c1f2f; color: #fff; margin: 0; padding: 20px; }
+.container { max-width: 1200px; margin: 0 auto; }
+.breadcrumb { color: #6c8cbf; font-size: 14px; margin-bottom: 20px; }
+.title { font-size: 28px; margin-bottom: 20px; }
+.status { display: inline-block; padding: 3px 8px; background: #2a8f2f; color: #fff; border-radius: 3px; font-size: 12px; margin-bottom: 20px; }
+.section { background: #1a3a52; padding: 20px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #2a5a7f; }
+.section-title { font-size: 16px; margin-bottom: 15px; font-weight: bold; }
+.task-list { list-style: none; padding: 0; margin: 0; }
+.task-item { padding: 10px 0; border-bottom: 1px solid #2a5a7f; display: flex; align-items: center; }
+.task-item:last-child { border-bottom: none; }
+.task-icon { width: 20px; height: 20px; background: #2a8f2f; border-radius: 50%; margin-right: 12px; flex-shrink: 0; }
+.task-name { font-size: 14px; flex: 1; }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="breadcrumb">Projects / oc-pipelines / Pipelines</div>
+<h1 class="title">oc-pipelines-final</h1>
+<span class="status">Succeeded</span>
+<div class="section">
+<div class="section-title">Pipeline Tasks</div>
+<ul class="task-list">
+<li class="task-item"><span class="task-icon"></span><span class="task-name">cleanup</span></li>
+<li class="task-item"><span class="task-icon"></span><span class="task-name">git-clone</span></li>
+<li class="task-item"><span class="task-icon"></span><span class="task-name">flake8</span></li>
+<li class="task-item"><span class="task-icon"></span><span class="task-name">eslint</span></li>
+<li class="task-item"><span class="task-icon"></span><span class="task-name">nose</span></li>
+<li class="task-item"><span class="task-icon"></span><span class="task-name">jest</span></li>
+<li class="task-item"><span class="task-icon"></span><span class="task-name">buildah</span></li>
+<li class="task-item"><span class="task-icon"></span><span class="task-name">deploy</span></li>
+<li class="task-item"><span class="task-icon"></span><span class="task-name">openshift-client</span></li>
+</ul>
+</div>
+</div>
+</body>
+</html>
